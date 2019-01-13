@@ -4,11 +4,9 @@
              xmlns:local="clr-namespace:Journalife"
              x:Class="Journalife.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Activated="ToolbarItem_Activated" />
+    </ContentPage.ToolbarItems>
 
 </ContentPage>
