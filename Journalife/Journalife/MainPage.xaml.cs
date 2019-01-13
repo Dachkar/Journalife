@@ -14,6 +14,18 @@ namespace Journalife
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing(); 
+            using(SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DB_PATH))
+            {
+                conn.CreateTable<Entry>();
+
+                var diaries = conn.Table<Entry>().ToList();
+                DiaryListView.ItemsSource = diaries;
+            }
+        }
+
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DiaryEntryPage());

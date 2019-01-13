@@ -9,4 +9,12 @@
                      Activated="ToolbarItem_Activated" />
     </ContentPage.ToolbarItems>
 
+    <ListView x:Name="DiaryListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Date}"
+                          Detail="{Binding Diary}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

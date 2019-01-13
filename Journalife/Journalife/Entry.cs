@@ -13,6 +13,13 @@ namespace Journalife
         public string Grat2 { get; set; }
         public string Grat3 { get; set; }
         public string Diary { get; set; }
+        public string time = DateTime.Now.ToString("M/d/yyyy");
+
+        public string Date {
+            get { return time; }
+            set { }
+        }
+
 
     }
 }
