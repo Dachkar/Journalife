@@ -4,11 +4,11 @@
              x:Class="Journalife.DiaryEntryPage">
 
     <StackLayout Margin="10">
-        <Entry Placeholder="I'm grateful for"/>
-        <Entry Placeholder="I'm grateful for"/>
-        <Entry Placeholder="I'm grateful for"/>
+        <Entry x:Name="G1" Placeholder="I'm grateful for"/>
+        <Entry x:Name="G2" Placeholder="I'm grateful for"/>
+        <Entry x:Name="G3" Placeholder="I'm grateful for"/>
 
-        <Entry Placeholder="Tell me about your day!"/>
+        <Entry x:Name="D" Placeholder="Tell me about your day!"/>
 
 
         <Button Text="Save"

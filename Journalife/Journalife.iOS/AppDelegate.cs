@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -22,8 +23,13 @@ namespace Journalife.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+            string FileName = "diary_db.sqlite";
+            string FileLocation = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
+            string FullPath = Path.Combine(FileLocation, FileName);
+
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(FullPath));
 
             return base.FinishedLaunching(app, options);
         }

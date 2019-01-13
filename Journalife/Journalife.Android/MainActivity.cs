@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace Journalife.Droid
 {
@@ -18,8 +19,13 @@ namespace Journalife.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            string FileName = "diary_db.sqlite";
+            string FileLocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string FullPath = Path.Combine(FileLocation, FileName);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(new App(FullPath));
         }
     }
 }
