@@ -23,12 +23,20 @@ namespace Journalife
 
                 var diaries = conn.Table<Entry>().ToList();
                 DiaryListView.ItemsSource = diaries;
+                
             }
         }
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DiaryEntryPage());
+        }
+
+        private void DiaryListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Entry TappedEnty = (Entry) e.Item;
+            
+            Navigation.PushAsync(new ViewEntryPage(TappedEnty));
         }
     }
 }

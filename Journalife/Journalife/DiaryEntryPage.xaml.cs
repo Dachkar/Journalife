@@ -32,8 +32,13 @@ namespace Journalife
                 connection.CreateTable<Entry>();
                 var numOfRows = connection.Insert(entry);
 
-                if(numOfRows>0)
+                if (numOfRows > 0)
+                {
                     DisplayAlert("Success!", "Diary entry saved", "ok");
+                    Navigation.PushAsync(new MainPage());
+                }
+
+
                 else
                     DisplayAlert("Failure!", "Diary entry failed to save", "ok");
 

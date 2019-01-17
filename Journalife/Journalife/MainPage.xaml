@@ -9,7 +9,7 @@
                      Activated="ToolbarItem_Activated" />
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="DiaryListView">
+    <ListView x:Name="DiaryListView" ItemTapped="DiaryListView_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Date}"
